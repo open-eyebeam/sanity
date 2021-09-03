@@ -26,7 +26,7 @@ import {
 
 export default () =>
   S.list()
-    .title("TSoaP")
+    .title("Open Eyebeam")
     .items([
       S.listItem()
       .title("Global settings")
@@ -38,16 +38,16 @@ export default () =>
           .schemaType("globalSettings")
           .documentId("global-settings")
       ),
-      S.listItem()
-      .title("Tutorial card")
-      .icon(MdHelp)
-      .child(
-        S.editor()
-          .id("tutorial-card")
-          .title("Tutorial card")
-          .schemaType("tutorialCard")
-          .documentId("tutorial-card")
-      ),
+      // S.listItem()
+      // .title("Tutorial card")
+      // .icon(MdHelp)
+      // .child(
+      //   S.editor()
+      //     .id("tutorial-card")
+      //     .title("Tutorial card")
+      //     .schemaType("tutorialCard")
+      //     .documentId("tutorial-card")
+      // ),
       S.listItem()
         .title("Active streams")
         .icon(MdCast)
@@ -58,27 +58,27 @@ export default () =>
             .schemaType("activeStreams")
             .documentId("active-streams")
         ),
-      S.listItem()
-        .title("Pinned message")
-        .icon(MdMessage)
-        .child(
-          S.editor()
-            .id("pinned-message")
-            .title("Pinned message")
-            .schemaType("pinnedMessage")
-            .documentId("pinned-message")
-        ),
-        S.listItem()
-        .title("Audioroom names")
-        .icon(MdVolumeUp)
-        .child(
-          S.editor()
-            .id("audioroom-names")
-            .title("Audioroom names")
-            .schemaType("audioRoomNames")
-            .documentId("audioroom-names")
-        ),
-      S.divider(),
+      // S.listItem()
+      //   .title("Pinned message")
+      //   .icon(MdMessage)
+      //   .child(
+      //     S.editor()
+      //       .id("pinned-message")
+      //       .title("Pinned message")
+      //       .schemaType("pinnedMessage")
+      //       .documentId("pinned-message")
+      //   ),
+        // S.listItem()
+        // .title("Audioroom names")
+        // .icon(MdVolumeUp)
+        // .child(
+        //   S.editor()
+        //     .id("audioroom-names")
+        //     .title("Audioroom names")
+        //     .schemaType("audioRoomNames")
+        //     .documentId("audioroom-names")
+        // ),
+      // S.divider(),
       // S.listItem()
       //   .title("Case Studies (Emergent)")
       //   .icon(MdShoppingBasket)
@@ -92,19 +92,19 @@ export default () =>
       //         { field: "title", direction: "asc" }
       //       ])
       //   ),
-      S.listItem()
-        .title("Projects")
-        .icon(MdHome)
-        .child(
-          S.documentList()
-            .title("Projects")
-            .showIcons(true)
-            .filter("_type == $type")
-            .params({ type: "caseStudyExhibition" })
-            .defaultOrdering([
-              { field: "title", direction: "asc" }
-            ])
-        ),
+      // S.listItem()
+      //   .title("Projects")
+      //   .icon(MdHome)
+      //   .child(
+      //     S.documentList()
+      //       .title("Projects")
+      //       .showIcons(true)
+      //       .filter("_type == $type")
+      //       .params({ type: "caseStudyExhibition" })
+      //       .defaultOrdering([
+      //         { field: "title", direction: "asc" }
+      //       ])
+      //   ),
       S.listItem()
         .title("Audio Installations")
         .icon(MdAudiotrack)
@@ -118,85 +118,85 @@ export default () =>
               { field: "title", direction: "asc" }
             ])
         ),
-      S.listItem()
-        .title("Events")
-        .icon(MdEvent)
-        .child(
-          S.documentList()
-            .title("Events")
-            .showIcons(true)
-            .filter("_type == $type")
-            .params({ type: "event" })
-            .defaultOrdering([
-              { field: "startDate", direction: "asc" },
-            ])
-        ),
-      S.listItem()
-        .title("Exhibitions")
-        .icon(MdPalette)
-        .child(
-          S.documentList()
-            .title("Exhibitions")
-            .showIcons(true)
-            .filter("_type == $type")
-            .params({ type: "exhibition" })
-            .defaultOrdering([
-              { field: "title", direction: "asc" }
-            ])
-        ),
-      S.listItem()
-        .title("Seminars")
-        .icon(MdSms)
-        .child(
-          S.documentList()
-            .title("Seminars")
-            .showIcons(true)
-            .filter("_type == $type")
-            .params({ type: "seminar" })
-            .defaultOrdering([
-              { field: "title", direction: "asc" }
-            ])
-        ),
-      S.listItem()
-        .title("Participants")
-        .icon(MdAccountCircle)
-        .child(
-          S.documentList()
-            .title("Participants")
-            .showIcons(true)
-            .filter("_type == $type")
-            .params({ type: "participant" })
-            .defaultOrdering([
-              { field: "name", direction: "asc" }
-            ])
-        ),
-      S.listItem()
-        .title("Cards")
-        .icon(MdViewAgenda)
-        .child(
-          S.documentList()
-            .title("Cards")
-            .showIcons(true)
-            .filter("_type == $type")
-            .params({ type: "card" })
-            .defaultOrdering([
-              { field: "title", direction: "asc" }
-            ])
-        ),
-      S.listItem()
-        .title("Pages")
-        .icon(MdNote)
-        .child(
-          S.documentList()
-            .title("Pages")
-            .showIcons(true)
-            .filter("_type == $type")
-            .params({ type: "page" })
-            .defaultOrdering([
-              { field: "title", direction: "asc" }
-            ])
-        ),
-      S.divider(),
+      // S.listItem()
+      //   .title("Events")
+      //   .icon(MdEvent)
+      //   .child(
+      //     S.documentList()
+      //       .title("Events")
+      //       .showIcons(true)
+      //       .filter("_type == $type")
+      //       .params({ type: "event" })
+      //       .defaultOrdering([
+      //         { field: "startDate", direction: "asc" },
+      //       ])
+      //   ),
+      // S.listItem()
+      //   .title("Exhibitions")
+      //   .icon(MdPalette)
+      //   .child(
+      //     S.documentList()
+      //       .title("Exhibitions")
+      //       .showIcons(true)
+      //       .filter("_type == $type")
+      //       .params({ type: "exhibition" })
+      //       .defaultOrdering([
+      //         { field: "title", direction: "asc" }
+      //       ])
+      //   ),
+      // S.listItem()
+      //   .title("Seminars")
+      //   .icon(MdSms)
+      //   .child(
+      //     S.documentList()
+      //       .title("Seminars")
+      //       .showIcons(true)
+      //       .filter("_type == $type")
+      //       .params({ type: "seminar" })
+      //       .defaultOrdering([
+      //         { field: "title", direction: "asc" }
+      //       ])
+      //   ),
+      // S.listItem()
+      //   .title("Participants")
+      //   .icon(MdAccountCircle)
+      //   .child(
+      //     S.documentList()
+      //       .title("Participants")
+      //       .showIcons(true)
+      //       .filter("_type == $type")
+      //       .params({ type: "participant" })
+      //       .defaultOrdering([
+      //         { field: "name", direction: "asc" }
+      //       ])
+      //   ),
+      // S.listItem()
+      //   .title("Cards")
+      //   .icon(MdViewAgenda)
+      //   .child(
+      //     S.documentList()
+      //       .title("Cards")
+      //       .showIcons(true)
+      //       .filter("_type == $type")
+      //       .params({ type: "card" })
+      //       .defaultOrdering([
+      //         { field: "title", direction: "asc" }
+      //       ])
+      //   ),
+      // S.listItem()
+      //   .title("Pages")
+      //   .icon(MdNote)
+      //   .child(
+      //     S.documentList()
+      //       .title("Pages")
+      //       .showIcons(true)
+      //       .filter("_type == $type")
+      //       .params({ type: "page" })
+      //       .defaultOrdering([
+      //         { field: "title", direction: "asc" }
+      //       ])
+      //   ),
+      // S.divider(),
       S.listItem()
         .title("Graphics")
         .icon(MdCollections)
@@ -217,29 +217,29 @@ export default () =>
                       { field: "title", direction: "asc" }
                     ])
                 ),
-              S.listItem()
-                .title("Case Study Sprites")
-                .icon(MdHome)
-                .child(
-                  S.documentList()
-                    .title("Case Study Sprites")
-                    .showIcons(true)
-                    .filter("_type == $type")
-                    .params({ type: "caseStudySprite" })
-                    .defaultOrdering([
-                      { field: "title", direction: "asc" }
-                    ])
-                ),
-              S.listItem()
-                .title("Areas")
-                .icon(MdLayers)
-                .child(
-                  S.documentList()
-                    .title("Areas")
-                    .showIcons(true)
-                    .filter("_type == $type")
-                    .params({ type: "area" })
-                ),
+              // S.listItem()
+              //   .title("Case Study Sprites")
+              //   .icon(MdHome)
+              //   .child(
+              //     S.documentList()
+              //       .title("Case Study Sprites")
+              //       .showIcons(true)
+              //       .filter("_type == $type")
+              //       .params({ type: "caseStudySprite" })
+              //       .defaultOrdering([
+              //         { field: "title", direction: "asc" }
+              //       ])
+              //   ),
+              // S.listItem()
+              //   .title("Areas")
+              //   .icon(MdLayers)
+              //   .child(
+              //     S.documentList()
+              //       .title("Areas")
+              //       .showIcons(true)
+              //       .filter("_type == $type")
+              //       .params({ type: "area" })
+              //   ),
               S.listItem()
                 .title("Maps")
                 .icon(MdMap)
@@ -263,16 +263,16 @@ export default () =>
                       { field: "title", direction: "asc" }
                     ])
                 ),
-              S.listItem()
-                .title("NPCs")
-                .icon(MdGamepad)
-                .child(
-                  S.documentList()
-                    .title("NPCs")
-                    .showIcons(true)
-                    .filter("_type == $type")
-                    .params({ type: "npc" })
-                ),
+              // S.listItem()
+              //   .title("NPCs")
+              //   .icon(MdGamepad)
+              //   .child(
+              //     S.documentList()
+              //       .title("NPCs")
+              //       .showIcons(true)
+              //       .filter("_type == $type")
+              //       .params({ type: "npc" })
+              //   ),
               S.listItem()
                 .title("Graphics settings")
                 .icon(MdSettings)
