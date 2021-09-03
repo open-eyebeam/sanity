@@ -22,7 +22,7 @@ export default {
       {
         title: "Color",
         name: "color",
-        type: "colors",
+        type: "colorlist",
         options: {
           borderradius: {
             outer: "100%",

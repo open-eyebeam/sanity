@@ -8,7 +8,7 @@ import classNames from "classnames"
 // 1. Import react-timepicker CSS
 import "./GenerateSpritesheet.css?raw"
 
-const GRAPHICS_PROCESSOR_URL = "https://testing-graphics.post-rational.org"
+const GRAPHICS_PROCESSOR_URL = "https://graphics.eyebeam.dev"
 
 // 2. Transform hours and minutes to a formatted time string
 // const outgoingValue = (hours, minutes) => `${padStart(hours, 2, '0')}:${padStart(minutes, 2, '0')}`
