@@ -5,12 +5,16 @@ export default {
   // __experimental_actions: [/*'create',*/ "update", /*'delete',*/ "publish"],
   fields: [
     {
+      title: "Main map",
+      name: "mapLink",
+      type: "reference",
+      to: [{ type: "map" }],
+      validation: Rule => Rule.required(),
+    },
+    {
       title: "Active avatars",
       name: "activeAvatars",
       type: "array",
-      options: {
-        editModal: "popover",
-      },
       of: [
         {
           title: "Avatar",
@@ -22,17 +26,18 @@ export default {
       validation: Rule => Rule.unique(),
     },
     {
-      title: "Active map",
-      name: "mapLink",
-      type: "reference",
-      to: [{ type: "gfxMap" }],
-      validation: Rule => Rule.required(),
-    },
-    {
-      title: "NPC Avatar",
-      name: "npcAvatarLink",
-      type: "reference",
-      to: [{ type: "avatar" }],
+      title: "Active rooms",
+      name: "activeRooms",
+      type: "array",
+      of: [
+        {
+          title: "Room",
+          name: "roomLink",
+          type: "reference",
+          to: [{ type: "room" }],
+        },
+      ],
+      validation: Rule => Rule.unique(),
     },
   ],
 }

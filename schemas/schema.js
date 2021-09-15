@@ -25,9 +25,11 @@ import pdfBlock from "./Pdf"
 import fileBlock from "./File"
 import imageBlock from "./ImageBlock"
 
-import gfxAvatar from "./Avatar"
+import avatar from "./Avatar"
 import gfxCaseStudySprite from "./CaseStudySprite"
-import gfxMap from "./Map"
+import map from "./Map"
+import room from "./Room"
+import exob from './ExOb'
 import landmark from "./Landmark"
 import npc from "./NPC"
 import graphicsSettings from "./GraphicsSettings"
@@ -47,11 +49,13 @@ export default createSchema({
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
     graphicsSettings,
-    gfxAvatar,
-    gfxMap,
+    avatar,
+    map,
+    room,
     gfxCaseStudySprite,
     audioInstallation,
     landmark,
+    exob,
     page,
     event,
     // caseStudyEmergent,

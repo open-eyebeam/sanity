@@ -10,32 +10,32 @@ export default {
         type: "string",
         validation: Rule => Rule.required(),
       },
-      {
-        title: "Welcome card",
-        name: "welcomeCard",
-        type: "reference",
-        to: [{ type: "card" }],
-      },
-      {
-        title: "Case study overview text",
-        name: "caseStudyOverview",
-        type: "simpleEditor"
-      },
-      {
-        title: "Event overview text",
-        name: "eventOverview",
-        type: "simpleEditor"
-      },
-      {
-        title: "Show archived events in frontpage preview",
-        name: "showArchived",
-        type: "boolean",
-      },
-      {
-        title: "Disable text chat input",
-        name: "disableChat",
-        type: "boolean",
-      },
+      // {
+      //   title: "Welcome card",
+      //   name: "welcomeCard",
+      //   type: "reference",
+      //   to: [{ type: "card" }],
+      // },
+      // {
+      //   title: "Case study overview text",
+      //   name: "caseStudyOverview",
+      //   type: "simpleEditor"
+      // },
+      // {
+      //   title: "Event overview text",
+      //   name: "eventOverview",
+      //   type: "simpleEditor"
+      // },
+      // {
+      //   title: "Show archived events in frontpage preview",
+      //   name: "showArchived",
+      //   type: "boolean",
+      // },
+      // {
+      //   title: "Disable text chat input",
+      //   name: "disableChat",
+      //   type: "boolean",
+      // },
       {
         title: "Site description (Metadata)",
         name: "siteDescription",
