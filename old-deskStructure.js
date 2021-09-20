@@ -157,19 +157,19 @@ export default () =>
       //         { field: "title", direction: "asc" }
       //       ])
       //   ),
-      // S.listItem()
-      //   .title("Participants")
-      //   .icon(MdAccountCircle)
-      //   .child(
-      //     S.documentList()
-      //       .title("Participants")
-      //       .showIcons(true)
-      //       .filter("_type == $type")
-      //       .params({ type: "participant" })
-      //       .defaultOrdering([
-      //         { field: "name", direction: "asc" }
-      //       ])
-      //   ),
+      S.listItem()
+        .title("Users")
+        .icon(MdAccountCircle)
+        .child(
+          S.documentList()
+            .title("Users")
+            .showIcons(true)
+            .filter("_type == $type")
+            .params({ type: "user" })
+            .defaultOrdering([
+              { field: "name", direction: "asc" }
+            ])
+        ),
       // S.listItem()
       //   .title("Cards")
       //   .icon(MdViewAgenda)

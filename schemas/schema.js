@@ -5,15 +5,15 @@ import createSchema from "part:@sanity/base/schema-creator"
 import schemaTypes from "all:part:@sanity/base/schema-type"
 
 // Schemas
-import page from "./Page"
-import card from "./Card"
-import event from "./Event"
-import exhibition from "./Exhibition"
+// import page from "./Page"
+// import card from "./Card"
+// import event from "./Event"
+// import exhibition from "./Exhibition"
 // import caseStudyEmergent from "./CaseStudyEmergent"
-import caseStudyExhibition from "./CaseStudyExhibition"
-import audioInstallation from "./AudioInstallation"
-import seminar from "./Seminar"
-import participant from "./Participant"
+// import caseStudyExhibition from "./CaseStudyExhibition"
+// import audioInstallation from "./AudioInstallation"
+// import seminar from "./Seminar"
+import user from "./User"
 
 import contentEditor from "./ContentEditor"
 import simpleEditor from "./SimpleEditor"
@@ -30,16 +30,15 @@ import gfxCaseStudySprite from "./CaseStudySprite"
 import map from "./Map"
 import room from "./Room"
 import exob from './ExOb'
-import landmark from "./Landmark"
-import npc from "./NPC"
+// import landmark from "./Landmark"
+// import npc from "./NPC"
 import graphicsSettings from "./GraphicsSettings"
-import area from "./Area"
 
 import activeStreams from "./ActiveStreams"
 import globalSettings from "./GlobalSettings"
-import pinnedMessage from "./PinnedMessage"
-import audioRoomNames from "./AudioRoomNames"
-import tutorialCard from "./TutorialCard"
+// import pinnedMessage from "./PinnedMessage"
+// import audioRoomNames from "./AudioRoomNames"
+// import tutorialCard from "./TutorialCard"
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -53,15 +52,8 @@ export default createSchema({
     map,
     room,
     gfxCaseStudySprite,
-    audioInstallation,
-    landmark,
     exob,
-    page,
-    event,
-    // caseStudyEmergent,
-    caseStudyExhibition,
-    seminar,
-    participant,
+    user,
     contentEditor,
     simpleEditor,
     embedBlock,
@@ -71,13 +63,6 @@ export default createSchema({
     fileBlock,
     imageBlock,
     activeStreams,
-    npc,
     globalSettings,
-    area,
-    card,
-    pinnedMessage,
-    audioRoomNames,
-    exhibition,
-    tutorialCard,
   ]),
 })

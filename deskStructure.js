@@ -38,6 +38,19 @@ export default () =>
             .documentId("active-streams")
         ),
     S.listItem()
+      .title("Users")
+      .icon(MdAccountCircle)
+      .child(
+        S.documentList()
+          .title("Users")
+          .showIcons(true)
+          .filter("_type == $type")
+          .params({ type: "user" })
+          .defaultOrdering([
+            { field: "name", direction: "asc" }
+          ])
+      ),
+    S.listItem()
       .title("Avatars")
       .icon(MdAccountCircle)
       .child(
