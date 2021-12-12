@@ -1,5 +1,5 @@
 // ICONS
-import { MdBook} from "react-icons/md"
+import { MdBook } from "react-icons/md"
 
 export default {
   title: "Object",
@@ -13,14 +13,28 @@ export default {
       type: "string",
     },
     {
-      title: "X",
-      name: "x",
-      type: "number",
+      title: "Parent area",
+      name: "parentArea",
+      type: "reference",
+      to: [{ type: "room" }],
+      validation: Rule => Rule.required(),
     },
     {
-      title: "Y",
+      title: "X-Position",
+      name: "x",
+      type: "number",
+      validation: Rule => Rule.required(),
+    },
+    {
+      title: "Y-Position",
       name: "y",
       type: "number",
+      validation: Rule => Rule.required(),
+    },
+    {
+      title: "Restricted",
+      name: "restricted",
+      type: "boolean",
     },
     {
       title: "Image",

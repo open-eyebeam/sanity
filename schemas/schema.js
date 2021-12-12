@@ -29,7 +29,9 @@ import avatar from "./Avatar"
 import gfxCaseStudySprite from "./CaseStudySprite"
 import map from "./Map"
 import room from "./Room"
+import zone from "./Zone"
 import exob from './ExOb'
+import portal from "./Portal"
 // import landmark from "./Landmark"
 // import npc from "./NPC"
 import graphicsSettings from "./GraphicsSettings"
@@ -64,5 +66,7 @@ export default createSchema({
     imageBlock,
     activeStreams,
     globalSettings,
+    zone,
+    portal
   ]),
 })
