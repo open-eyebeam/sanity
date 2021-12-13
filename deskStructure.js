@@ -6,7 +6,8 @@ import {
   MdYard,
   MdBook,
   MdDoorFront,
-  MdAdjust
+  MdAdjust,
+  MdBookmarkAdded
 } from "react-icons/md"
 
 export default () =>
@@ -25,34 +26,103 @@ export default () =>
         ),
       S.divider(),
       S.listItem()
-        .title("Portals")
+        .title('Portals')
         .icon(MdDoorFront)
         .child(
-          S.documentList()
+          S.list()
             .title("Portals")
-            .showIcons(true)
-            .filter("_type == $type")
-            .params({ type: "portal" })
+            .items([
+              S.listItem()
+                .title('All portals')
+                .icon(MdDoorFront)
+                .child(
+                  S.documentList()
+                    .title('All portals')
+                    // .defaultLayout('detail')
+                    .filter('_type == $type')
+                    .params({ type: 'portal' })
+                ),
+              S.listItem()
+                .title('Portals by Room')
+                .icon(MdDoorFront)
+                .child(
+                  S.documentTypeList('room')
+                    .title('Portals by Room')
+                    .child(roomId =>
+                      S.documentList()
+                        .title('Portals by Room')
+                        // .defaultLayout('detail')
+                        .filter('_type == "portal" && $roomId== parentArea._ref')
+                        .params({ roomId })
+                    )
+                ),
+            ])
         ),
       S.listItem()
-        .title("Objects")
+        .title('Objects')
         .icon(MdBook)
         .child(
-          S.documentList()
+          S.list()
             .title("Objects")
-            .showIcons(true)
-            .filter("_type == $type")
-            .params({ type: "exob" })
+            .items([
+              S.listItem()
+                .title('All objects')
+                .icon(MdBook)
+                .child(
+                  S.documentList()
+                    .title('All objects')
+                    // .defaultLayout('detail')
+                    .filter('_type == $type')
+                    .params({ type: 'exob' })
+                ),
+              S.listItem()
+                .title('Objects by Room')
+                .icon(MdBook)
+                .child(
+                  S.documentTypeList('room')
+                    .title('Objects by Room')
+                    .child(roomId =>
+                      S.documentList()
+                        .title('Objects by Room')
+                        // .defaultLayout('detail')
+                        .filter('_type == "exob" && $roomId== parentArea._ref')
+                        .params({ roomId })
+                    )
+                ),
+            ])
         ),
       S.listItem()
-        .title("Zones")
+        .title('Zones')
         .icon(MdAdjust)
         .child(
-          S.documentList()
+          S.list()
             .title("Zones")
-            .showIcons(true)
-            .filter("_type == $type")
-            .params({ type: "zone" })
+            .items([
+              S.listItem()
+                .title('All zones')
+                .icon(MdAdjust)
+                .child(
+                  S.documentList()
+                    .title('All zones')
+                    // .defaultLayout('detail')
+                    .filter('_type == $type')
+                    .params({ type: 'zone' })
+                ),
+              S.listItem()
+                .title('Zones by Room')
+                .icon(MdAdjust)
+                .child(
+                  S.documentTypeList('room')
+                    .title('Zones by Room')
+                    .child(roomId =>
+                      S.documentList()
+                        .title('Zones by Room')
+                        // .defaultLayout('detail')
+                        .filter('_type == "zone" && $roomId== parentArea._ref')
+                        .params({ roomId })
+                    )
+                ),
+            ])
         ),
       S.divider(),
       S.listItem()
