@@ -1,13 +1,13 @@
 // ICONS
 import {
-  MdHome
+  MdYard
 } from "react-icons/md"
 
 export default {
   title: "Room",
   name: "room",
   type: "document",
-  icon: MdHome,
+  icon: MdYard,
   fields: [
     {
       title: "Title",
@@ -27,6 +27,7 @@ export default {
     {
       title: "Main area",
       name: "mainArea",
+      description: "If toggled, the user will start in this room",
       type: "boolean",
     },
     {
@@ -49,7 +50,36 @@ export default {
       ]
     },
     {
+      title: "Landing zone",
+      name: "landingZone",
+      description: "The landing zone is the area where the player can start the game",
+      type: "object",
+      fields: [
+        {
+          title: "X-position (min)",
+          name: "minX",
+          type: "number"
+        },
+        {
+          title: "X-position (max)",
+          name: "maxX",
+          type: "number"
+        },
+        {
+          title: "Y-position (min)",
+          name: "minY",
+          type: "number"
+        },
+        {
+          title: "Y-position (max)",
+          name: "maxY",
+          type: "number"
+        },
+      ]
+    },
+    {
       title: "Restricted",
+      description: "Only show this room to users who are logged in",
       name: "restricted",
       type: "boolean",
     },

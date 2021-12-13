@@ -2,12 +2,11 @@ import S from "@sanity/desk-tool/structure-builder"
 
 // ICONS
 import {
-  MdSettings,
   MdAccountCircle,
-  MdHome,
+  MdYard,
   MdBook,
-  MdWaterDrop,
   MdDoorFront,
+  MdAdjust
 } from "react-icons/md"
 
 export default () =>
@@ -16,7 +15,7 @@ export default () =>
     .items([
       S.listItem()
         .title("Rooms")
-        .icon(MdHome)
+        .icon(MdYard)
         .child(
           S.documentList()
             .title("Rooms")
@@ -47,7 +46,7 @@ export default () =>
         ),
       S.listItem()
         .title("Zones")
-        .icon(MdWaterDrop)
+        .icon(MdAdjust)
         .child(
           S.documentList()
             .title("Zones")
@@ -82,15 +81,15 @@ export default () =>
               { field: "title", direction: "asc" }
             ])
         ),
-      S.divider(),
-      S.listItem()
-        .title("Graphics settings")
-        .icon(MdSettings)
-        .child(
-          S.editor()
-            .id("config")
-            .title("Graphics settings")
-            .schemaType("graphicsSettings")
-            .documentId("graphics-settings")
-        ),
+      // S.divider(),
+      // S.listItem()
+      //   .title("Graphics settings")
+      //   .icon(MdSettings)
+      //   .child(
+      //     S.editor()
+      //       .id("config")
+      //       .title("Graphics settings")
+      //       .schemaType("graphicsSettings")
+      //       .documentId("graphics-settings")
+      //   ),
     ])

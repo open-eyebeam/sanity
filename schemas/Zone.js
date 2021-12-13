@@ -1,13 +1,13 @@
 // ICONS
 import {
-    MdWaterDrop
+    MdAdjust
 } from "react-icons/md"
 
 export default {
     title: "Zone",
     name: "zone",
     type: "document",
-    icon: MdWaterDrop,
+    icon: MdAdjust,
     fields: [
         {
             title: "Title",

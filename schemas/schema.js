@@ -13,34 +13,33 @@ import schemaTypes from "all:part:@sanity/base/schema-type"
 // import caseStudyExhibition from "./CaseStudyExhibition"
 // import audioInstallation from "./AudioInstallation"
 // import seminar from "./Seminar"
-import user from "./User"
+// import gfxCaseStudySprite from "./CaseStudySprite"
+// import graphicsSettings from "./GraphicsSettings"
+// import activeStreams from "./ActiveStreams"
+// import map from "./Map"
+// import landmark from "./Landmark"
+// import npc from "./NPC"
+// import pinnedMessage from "./PinnedMessage"
+// import audioRoomNames from "./AudioRoomNames"
+// import tutorialCard from "./TutorialCard"
+// import globalSettings from "./GlobalSettings"
 
-import contentEditor from "./ContentEditor"
-import simpleEditor from "./SimpleEditor"
-
-import embedBlock from "./Embed"
-import videoBlock from "./Video"
-import audioBlock from "./Audio"
-import pdfBlock from "./Pdf"
-import fileBlock from "./File"
-import imageBlock from "./ImageBlock"
-
+// PRIMITIVES
+import embedBlock from "./Primitives/Embed"
+import videoBlock from "./Primitives/Video"
+import audioBlock from "./Primitives/Audio"
+import pdfBlock from "./Primitives/Pdf"
+import fileBlock from "./Primitives/File"
+import imageBlock from "./Primitives/ImageBlock"
+import contentEditor from "./Primitives/ContentEditor"
+import simpleEditor from "./Primitives/SimpleEditor"
+// ...
 import avatar from "./Avatar"
-import gfxCaseStudySprite from "./CaseStudySprite"
-import map from "./Map"
 import room from "./Room"
 import zone from "./Zone"
 import exob from './ExOb'
 import portal from "./Portal"
-// import landmark from "./Landmark"
-// import npc from "./NPC"
-import graphicsSettings from "./GraphicsSettings"
-
-import activeStreams from "./ActiveStreams"
-import globalSettings from "./GlobalSettings"
-// import pinnedMessage from "./PinnedMessage"
-// import audioRoomNames from "./AudioRoomNames"
-// import tutorialCard from "./TutorialCard"
+import user from "./User"
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -49,13 +48,7 @@ export default createSchema({
   // Then proceed to concatenate our document type
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
-    graphicsSettings,
-    avatar,
-    map,
-    room,
-    gfxCaseStudySprite,
-    exob,
-    user,
+    // PRIMITIVES
     contentEditor,
     simpleEditor,
     embedBlock,
@@ -64,8 +57,11 @@ export default createSchema({
     pdfBlock,
     fileBlock,
     imageBlock,
-    activeStreams,
-    globalSettings,
+    // ...
+    avatar,
+    room,
+    exob,
+    user,
     zone,
     portal
   ]),
