@@ -15,6 +15,13 @@ export default {
             type: "string",
         },
         {
+            title: "Target area",
+            name: "targetArea",
+            type: "reference",
+            to: [{ type: "room" }],
+            validation: Rule => Rule.required(),
+        },
+        {
             title: "Parent area",
             name: "parentArea",
             type: "reference",
@@ -23,42 +30,19 @@ export default {
         },
         {
             title: "X-Position",
+            description: "In grid units",
             name: "x",
             type: "number",
             validation: Rule => Rule.required(),
         },
         {
             title: "Y-Position",
+            description: "In grid units",
             name: "y",
             type: "number",
             validation: Rule => Rule.required(),
         },
-        {
-            title: "Target area",
-            name: "targetArea",
-            type: "reference",
-            to: [{ type: "room" }],
-            validation: Rule => Rule.required(),
-        },
-        {
-            title: "Dimensions",
-            name: "dimensions",
-            type: "object",
-            fields: [
-                {
-                    title: "Width",
-                    name: "width",
-                    type: "number",
-                    validation: Rule => Rule.required(),
-                },
-                {
-                    title: "Height",
-                    name: "height",
-                    type: "number",
-                    validation: Rule => Rule.required(),
-                },
-            ]
-        },
+
         {
             title: "Restricted",
             name: "restricted",
@@ -71,7 +55,6 @@ export default {
         },
         {
             title: "Background image",
-            description: "4000x4000 pixel png",
             name: "backgroundImage",
             type: "image",
         },

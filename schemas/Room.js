@@ -1,7 +1,6 @@
 // ICONS
-import {
-  MdYard
-} from "react-icons/md"
+import { MdYard } from "react-icons/md"
+import DimensionInput from '../src/DimensionInput'
 
 export default {
   title: "Room",
@@ -31,20 +30,31 @@ export default {
       type: "boolean",
     },
     {
+      title: "Restricted",
+      description: "Only show this room to users who are logged in",
+      name: "restricted",
+      type: "boolean",
+      hidden: ({ document }) => document?.mainArea
+    },
+    {
       title: "Dimensions",
       name: "dimensions",
       type: "object",
       fields: [
         {
           title: "Width",
+          description: "In grid units",
           name: "width",
           type: "number",
+          inputComponent: DimensionInput,
           validation: Rule => Rule.required(),
         },
         {
           title: "Height",
+          description: "In grid units",
           name: "height",
           type: "number",
+          inputComponent: DimensionInput,
           validation: Rule => Rule.required(),
         },
       ]
@@ -78,19 +88,12 @@ export default {
       ]
     },
     {
-      title: "Restricted",
-      description: "Only show this room to users who are logged in",
-      name: "restricted",
-      type: "boolean",
-    },
-    {
       title: 'Background color',
       name: 'backgroundColor',
       type: 'color'
     },
     {
       title: "Background image",
-      description: "4000x4000 pixel png",
       name: "backgroundImage",
       type: "image",
     },
@@ -99,11 +102,11 @@ export default {
       name: "introduction",
       type: "string",
     },
-    {
-      title: "Enabled chat",
-      name: "chat",
-      type: "boolean",
-    },
+    // {
+    //   title: "Enabled chat",
+    //   name: "chat",
+    //   type: "boolean",
+    // },
     {
       title: "Stream",
       name: "stream",
