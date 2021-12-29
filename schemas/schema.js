@@ -63,6 +63,6 @@ export default createSchema({
     exob,
     user,
     zone,
-    portal
+    portal,
   ]),
 })

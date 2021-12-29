@@ -7,7 +7,7 @@ import {
   MdBook,
   MdDoorFront,
   MdAdjust,
-  MdBookmarkAdded
+  MdMood
 } from "react-icons/md"
 
 export default () =>
@@ -126,6 +126,20 @@ export default () =>
         ),
       S.divider(),
       S.listItem()
+        .title("Avatars")
+        .icon(MdMood)
+        .child(
+          S.documentList()
+            .title("Avatars")
+            .showIcons(true)
+            .filter("_type == $type")
+            .params({ type: "avatar" })
+            .defaultOrdering([
+              { field: "title", direction: "asc" }
+            ])
+        ),
+      S.divider(),
+      S.listItem()
         .title("Users")
         .icon(MdAccountCircle)
         .child(
@@ -138,19 +152,7 @@ export default () =>
               { field: "name", direction: "asc" }
             ])
         ),
-      S.listItem()
-        .title("Avatars")
-        .icon(MdAccountCircle)
-        .child(
-          S.documentList()
-            .title("Avatars")
-            .showIcons(true)
-            .filter("_type == $type")
-            .params({ type: "avatar" })
-            .defaultOrdering([
-              { field: "title", direction: "asc" }
-            ])
-        ),
+
       // S.divider(),
       // S.listItem()
       //   .title("Graphics settings")
