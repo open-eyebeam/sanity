@@ -58,7 +58,14 @@ export default {
       ]
     },
     {
+      title: "Static object",
+      description: "Can not be interacted with and does not have content. A decorative object.",
+      name: "static",
+      type: "boolean",
+    },
+    {
       title: "Restricted",
+      description: "Only shown to users who are logged in",
       name: "restricted",
       type: "boolean",
     },
@@ -71,6 +78,7 @@ export default {
       title: "Content",
       name: "content",
       type: "contentEditor",
+      hidden: ({ document }) => document?.static
     },
   ]
 }
