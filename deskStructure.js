@@ -47,7 +47,7 @@ export default () =>
                 .icon(MdDoorFront)
                 .child(
                   S.documentTypeList('room')
-                    .title('Portals by Room')
+                    .title('Parent room')
                     .child(roomId =>
                       S.documentList()
                         .title('Portals by Room')

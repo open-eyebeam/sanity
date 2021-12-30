@@ -17,6 +17,7 @@ export default {
     },
     {
       title: "Image",
+      description: "32x32 pixels",
       name: "image",
       type: "image"
     },

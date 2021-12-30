@@ -87,11 +87,11 @@ export default {
         },
       ]
     },
-    {
-      title: 'Background color',
-      name: 'backgroundColor',
-      type: 'color'
-    },
+    // {
+    //   title: 'Background color',
+    //   name: 'backgroundColor',
+    //   type: 'color'
+    // },
     {
       title: "Background image",
       name: "backgroundImage",
@@ -100,18 +100,18 @@ export default {
     {
       title: "Introduction",
       name: "introduction",
-      type: "string",
+      type: "simpleEditor",
     },
     // {
     //   title: "Enabled chat",
     //   name: "chat",
     //   type: "boolean",
     // },
-    {
-      title: "Stream",
-      name: "stream",
-      type: "url",
-    },
+    // {
+    //   title: "Stream",
+    //   name: "stream",
+    //   type: "url",
+    // },
     {
       title: "Background sound",
       name: "backgroundSound",

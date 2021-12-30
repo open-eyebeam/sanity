@@ -48,13 +48,13 @@ export default {
             name: "restricted",
             type: "boolean",
         },
+        // {
+        //     title: 'Background color',
+        //     name: 'backgroundColor',
+        //     type: 'color'
+        // },
         {
-            title: 'Background color',
-            name: 'backgroundColor',
-            type: 'color'
-        },
-        {
-            title: "Background image",
+            title: "Image",
             name: "backgroundImage",
             type: "image",
         },

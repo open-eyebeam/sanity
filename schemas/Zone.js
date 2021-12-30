@@ -72,31 +72,25 @@ export default {
             name: "restricted",
             type: "boolean",
         },
-        {
-            title: 'Background color',
-            name: 'backgroundColor',
-            type: 'color'
-        },
+        // {
+        //     title: 'Background color',
+        //     name: 'backgroundColor',
+        //     type: 'color'
+        // },
         {
             title: "Background image",
-            description: "4000x4000 pixel png",
             name: "backgroundImage",
             type: "image",
         },
         {
             title: "Introduction",
             name: "introduction",
-            type: "string",
+            type: "simpleEditor",
         },
         {
             title: "Enabled chat",
             name: "chat",
             type: "boolean",
-        },
-        {
-            title: "Stream",
-            name: "stream",
-            type: "url",
         },
         {
             title: "Background sound",
