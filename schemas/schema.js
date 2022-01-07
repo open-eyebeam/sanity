@@ -25,14 +25,25 @@ import schemaTypes from "all:part:@sanity/base/schema-type"
 // import globalSettings from "./GlobalSettings"
 
 // PRIMITIVES
-import embedBlock from "./Primitives/Embed"
-import videoBlock from "./Primitives/Video"
-import audioBlock from "./Primitives/Audio"
-import pdfBlock from "./Primitives/Pdf"
-import fileBlock from "./Primitives/File"
-import imageBlock from "./Primitives/ImageBlock"
-import contentEditor from "./Primitives/ContentEditor"
-import simpleEditor from "./Primitives/SimpleEditor"
+// import embedBlock from "./Primitives/Embed"
+// import videoBlock from "./Primitives/Video"
+// import audioBlock from "./Primitives/Audio"
+// import pdfBlock from "./Primitives/Pdf"
+// import fileBlock from "./Primitives/File"
+// import imageBlock from "./Primitives/ImageBlock"
+// import contentEditor from "./Primitives/ContentEditor"
+// import simpleEditor from "./Primitives/SimpleEditor"
+// __ COMPONENTS
+import contentEditor from './components/ContentEditor'
+import simpleEditor from './components/SimpleEditor'
+import embedBlock from './components/Embed'
+// import videoBlock from './components/Video'
+import audioBlock from './components/Audio'
+import dividerBlock from './components/Divider'
+import columnsBlock from './components/Columns'
+import donationWidget from './components/DonationWidget'
+import applicationButton from './components/ApplicationButton'
+import Faq from './components/Faq'
 // ...
 import avatar from "./Avatar"
 import room from "./Room"
@@ -48,15 +59,16 @@ export default createSchema({
   // Then proceed to concatenate our document type
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
-    // PRIMITIVES
+    // COMPONENTS
     contentEditor,
     simpleEditor,
     embedBlock,
-    videoBlock,
     audioBlock,
-    pdfBlock,
-    fileBlock,
-    imageBlock,
+    dividerBlock,
+    columnsBlock,
+    donationWidget,
+    applicationButton,
+    Faq,
     // ...
     avatar,
     room,

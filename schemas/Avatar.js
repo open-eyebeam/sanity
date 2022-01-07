@@ -1,6 +1,3 @@
-// CUSTOM INPUT
-import GenerateSpritesheet from "../components/GenerateSpritesheet"
-
 // ICONS
 import { MdMood } from "react-icons/md"
 

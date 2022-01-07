@@ -75,10 +75,27 @@ export default {
       type: "image"
     },
     {
+      title: "Content type",
+      name: "contentType",
+      type: "string",
+      options: {
+        list: [
+          { title: "Text", value: "text" },
+          { title: "Video", value: "video" },
+        ],
+      },
+    },
+    {
       title: "Content",
       name: "content",
       type: "contentEditor",
-      hidden: ({ document }) => document?.static
+      hidden: ({ document }) => document?.static || document?.contentType == "video",
+    },
+    {
+      title: "Video url",
+      name: "videoUrl",
+      type: "url",
+      hidden: ({ document }) => document?.static || document?.contentType !== "video",
     },
   ]
 }
