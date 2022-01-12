@@ -75,6 +75,12 @@ export default {
       type: "image"
     },
     {
+      title: "Info text",
+      description: "Displayed in the bottom left corner of the screen when viewing the object",
+      name: "infoText",
+      type: "string",
+    },
+    {
       title: "Content type",
       name: "contentType",
       type: "string",
@@ -82,6 +88,8 @@ export default {
         list: [
           { title: "Text", value: "text" },
           { title: "Video", value: "video" },
+          { title: "Import from main website", value: "importedPost" },
+          { title: "Bulletin Board", value: "bulletinBoard" },
         ],
       },
     },
@@ -93,6 +101,7 @@ export default {
     },
     {
       title: "Video url",
+      description: "URL for a video hosted by peertube, youtube or vimeo.",
       name: "videoUrl",
       type: "url",
       hidden: ({ document }) => document?.static || document?.contentType !== "video",

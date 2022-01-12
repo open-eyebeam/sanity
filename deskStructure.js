@@ -7,7 +7,8 @@ import {
   MdBook,
   MdDoorFront,
   MdAdjust,
-  MdMood
+  MdMood,
+  MdComment
 } from "react-icons/md"
 
 export default () =>
@@ -152,16 +153,15 @@ export default () =>
               { field: "name", direction: "asc" }
             ])
         ),
-
       // S.divider(),
-      // S.listItem()
-      //   .title("Graphics settings")
-      //   .icon(MdSettings)
-      //   .child(
-      //     S.editor()
-      //       .id("config")
-      //       .title("Graphics settings")
-      //       .schemaType("graphicsSettings")
-      //       .documentId("graphics-settings")
-      //   ),
+      //   S.listItem()
+      //     .title("Bulletin Board")
+      //     .icon(MdComment)
+      //     .child(
+      //       S.editor()
+      //         .id("bulletinBoard")
+      //         .title("Bulletin Board")
+      //         .schemaType("bulletinBoard")
+      //         .documentId("bulletinBoard")
+      //     ),
     ])

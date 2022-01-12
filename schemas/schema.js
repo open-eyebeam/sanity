@@ -51,6 +51,8 @@ import zone from "./Zone"
 import exob from './ExOb'
 import portal from "./Portal"
 import user from "./User"
+import bulletinBoard from "./BulletinBoard"
+
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -76,5 +78,6 @@ export default createSchema({
     user,
     zone,
     portal,
+    bulletinBoard
   ]),
 })

@@ -60,39 +60,6 @@ export default {
       ]
     },
     {
-      title: "Landing zone",
-      name: "landingZone",
-      description: "The landing zone is the area where the player can start the game",
-      type: "object",
-      fields: [
-        {
-          title: "X-position (min)",
-          name: "minX",
-          type: "number"
-        },
-        {
-          title: "X-position (max)",
-          name: "maxX",
-          type: "number"
-        },
-        {
-          title: "Y-position (min)",
-          name: "minY",
-          type: "number"
-        },
-        {
-          title: "Y-position (max)",
-          name: "maxY",
-          type: "number"
-        },
-      ]
-    },
-    // {
-    //   title: 'Background color',
-    //   name: 'backgroundColor',
-    //   type: 'color'
-    // },
-    {
       title: "Background image",
       name: "backgroundImage",
       type: "image",
@@ -102,16 +69,20 @@ export default {
       name: "introduction",
       type: "simpleEditor",
     },
-    // {
-    //   title: "Enabled chat",
-    //   name: "chat",
-    //   type: "boolean",
-    // },
-    // {
-    //   title: "Stream",
-    //   name: "stream",
-    //   type: "url",
-    // },
+    {
+      title: 'Introduction texts',
+      name: 'introductionTexts',
+      type: 'array',
+      of: [{
+        type: 'object', fields: [
+          {
+            title: "Text",
+            name: "text",
+            type: "simpleEditor",
+          }
+        ]
+      }]
+    },
     {
       title: "Background sound",
       name: "backgroundSound",

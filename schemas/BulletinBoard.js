@@ -1,25 +1,16 @@
 // ICONS
-import {
-    MdDoorFront
-} from "react-icons/md"
+import { MdComment } from "react-icons/md"
 
 export default {
-    title: "Portal",
-    name: "portal",
+    title: "Bulletin Board",
+    name: "bulletinBoard",
     type: "document",
-    icon: MdDoorFront,
+    icon: MdComment,
     fields: [
         {
             title: "Title",
             name: "title",
             type: "string",
-        },
-        {
-            title: "Target area",
-            name: "targetArea",
-            type: "reference",
-            to: [{ type: "room" }],
-            validation: Rule => Rule.required(),
         },
         {
             title: "Parent area",
@@ -42,16 +33,10 @@ export default {
             type: "number",
             validation: Rule => Rule.required(),
         },
-
-        {
-            title: "Restricted",
-            name: "restricted",
-            type: "boolean",
-        },
         {
             title: "Image",
-            name: "backgroundImage",
-            type: "image",
+            name: "iconImage",
+            type: "image"
         },
-    ],
+    ]
 }
