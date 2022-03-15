@@ -1,6 +1,14 @@
-// ICONS
 import { MdBook } from "react-icons/md"
 import DimensionInput from '../src/DimensionInput'
+import AsyncSelect from '../src/AsyncSelect'
+
+const postHandler = (json) => {
+  console.log(json.result)
+  return json.result.map(post => ({
+    title: post.title,
+    value: post._id
+  }))
+}
 
 export default {
   title: "Object",
@@ -59,7 +67,7 @@ export default {
     },
     {
       title: "Static object",
-      description: "Can not be interacted with and does not have content. A decorative object.",
+      description: "Can't be interacted with and doesn't have content. A decorative object.",
       name: "static",
       type: "boolean",
     },
@@ -97,7 +105,7 @@ export default {
       title: "Content",
       name: "content",
       type: "contentEditor",
-      hidden: ({ document }) => document?.static || document?.contentType == "video",
+      hidden: ({ document }) => document?.static || document?.contentType !== "text",
     },
     {
       title: "Video url",
@@ -105,6 +113,17 @@ export default {
       name: "videoUrl",
       type: "url",
       hidden: ({ document }) => document?.static || document?.contentType !== "video",
+    },
+    {
+      title: "Import post from main website",
+      name: "importedPost",
+      type: "string",
+      inputComponent: AsyncSelect,
+      options: {
+        url: 'https://3knpqano.api.sanity.io/v2021-10-05/data/query/production?query=%2A%5B_type%20in%20%5B%22project%22%2C%20%22news%22%2C%20%22event%22%2C%20%22note%22%2C%20%22program%22%5D%5D',
+        handler: postHandler
+      },
+      hidden: ({ document }) => document?.static || document?.contentType !== "importedPost",
     },
   ]
 }

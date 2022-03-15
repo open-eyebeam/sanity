@@ -54,7 +54,7 @@ export const DimensionInput = React.forwardRef((props, ref) => {
         />
       </FormField>
       <Text muted size={1}></Text>
-      <Text muted size={1}>{value} × 32px = {value * 32}px</Text>
+      <Text muted size={1}>{value ? value : 0} × 32px = {value ? value * 32 : 0}px</Text>
     </Stack>
   )
 }

@@ -8,7 +8,7 @@ import {
   MdDoorFront,
   MdAdjust,
   MdMood,
-  MdComment
+  MdStream
 } from "react-icons/md"
 
 export default () =>
@@ -141,6 +141,17 @@ export default () =>
         ),
       S.divider(),
       S.listItem()
+        .title("Streams")
+        .icon(MdStream)
+        .child(
+          S.editor()
+            .id("streams")
+            .title("Sreams")
+            .schemaType("streams")
+            .documentId("streams")
+        ),
+      S.divider(),
+      S.listItem()
         .title("Users")
         .icon(MdAccountCircle)
         .child(
@@ -153,15 +164,5 @@ export default () =>
               { field: "name", direction: "asc" }
             ])
         ),
-      // S.divider(),
-      //   S.listItem()
-      //     .title("Bulletin Board")
-      //     .icon(MdComment)
-      //     .child(
-      //       S.editor()
-      //         .id("bulletinBoard")
-      //         .title("Bulletin Board")
-      //         .schemaType("bulletinBoard")
-      //         .documentId("bulletinBoard")
-      //     ),
+
     ])
