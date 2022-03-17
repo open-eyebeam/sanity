@@ -22,8 +22,9 @@ import zone from "./Zone"
 import exob from './ExOb'
 import portal from "./Portal"
 import user from "./User"
+import event from "./Event"
 import streams from "./Streams"
-
+import bulletinBoardSettings from "./BulletinBoardSettings"
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -49,6 +50,8 @@ export default createSchema({
     user,
     zone,
     portal,
-    streams
+    streams,
+    event,
+    bulletinBoardSettings
   ]),
 })

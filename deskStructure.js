@@ -8,7 +8,10 @@ import {
   MdDoorFront,
   MdAdjust,
   MdMood,
-  MdStream
+  MdStream,
+  MdCalendarToday,
+  MdEditCalendar,
+  MdEvent
 } from "react-icons/md"
 
 export default () =>
@@ -127,6 +130,36 @@ export default () =>
         ),
       S.divider(),
       S.listItem()
+        .title('Bulletin Board')
+        .icon(MdCalendarToday)
+        .child(
+          S.list()
+            .title('Bulletin Board')
+            .items([
+              S.listItem()
+                .title("Settings")
+                .icon(MdEditCalendar)
+                .child(
+                  S.editor()
+                    .id("bulletin-board-settings")
+                    .title("Settings")
+                    .schemaType("bulletin-board-settings")
+                    .documentId("bulletin-board-settings")
+                ),
+              S.listItem()
+                .title('Events')
+                .icon(MdEvent)
+                .child(
+                  S.documentList()
+                    .title('Events')
+                    // .defaultLayout('detail')
+                    .filter('_type == $type')
+                    .params({ type: 'event' })
+                ),
+            ])
+        ),
+      S.divider(),
+      S.listItem()
         .title("Avatars")
         .icon(MdMood)
         .child(
@@ -146,7 +179,7 @@ export default () =>
         .child(
           S.editor()
             .id("streams")
-            .title("Sreams")
+            .title("Streams")
             .schemaType("streams")
             .documentId("streams")
         ),
@@ -164,5 +197,4 @@ export default () =>
               { field: "name", direction: "asc" }
             ])
         ),
-
     ])
