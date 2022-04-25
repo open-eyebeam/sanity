@@ -12,6 +12,7 @@ export default {
             title: "Title",
             name: "title",
             type: "string",
+            validation: Rule => Rule.required(),
         },
         {
             title: "Slug",
@@ -48,6 +49,7 @@ export default {
             title: "Dimensions",
             name: "dimensions",
             type: "object",
+            validation: Rule => Rule.required(),
             fields: [
                 {
                     title: "Width",
@@ -72,25 +74,20 @@ export default {
             name: "restricted",
             type: "boolean",
         },
-        // {
-        //     title: 'Background color',
-        //     name: 'backgroundColor',
-        //     type: 'color'
-        // },
-        {
-            title: "Background image",
-            name: "backgroundImage",
-            type: "image",
-        },
         {
             title: "Introduction",
             name: "introduction",
             type: "simpleEditor",
         },
         {
-            title: "Enabled chat",
-            name: "chat",
-            type: "boolean",
+            title: "Background image",
+            name: "backgroundImage",
+            type: "image",
+        },
+        {
+            title: "Background video",
+            name: "backgroundVideo",
+            type: "file",
         },
         {
             title: "Background sound",

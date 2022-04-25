@@ -13,6 +13,7 @@ export default {
             title: "Title",
             name: "title",
             type: "string",
+            validation: Rule => Rule.required(),
         },
         {
             title: "Target area",
@@ -52,6 +53,7 @@ export default {
             title: "Image",
             name: "backgroundImage",
             type: "image",
+            validation: Rule => Rule.required(),
         },
     ],
 }

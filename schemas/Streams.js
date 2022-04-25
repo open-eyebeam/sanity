@@ -19,6 +19,7 @@ export default {
                         title: 'Title',
                         name: 'title',
                         type: 'string',
+                        validation: Rule => Rule.required(),
                     },
                     {
                         title: "Room or Zone",

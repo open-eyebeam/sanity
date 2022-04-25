@@ -20,6 +20,7 @@ export default {
       title: "Title",
       name: "title",
       type: "string",
+      validation: Rule => Rule.required()
     },
     {
       title: "Parent area",
@@ -46,6 +47,7 @@ export default {
       title: "Dimensions",
       name: "dimensions",
       type: "object",
+      validation: Rule => Rule.required(),
       fields: [
         {
           title: "Width",
@@ -80,7 +82,8 @@ export default {
     {
       title: "Image",
       name: "iconImage",
-      type: "image"
+      type: "image",
+      validation: Rule => Rule.required(),
     },
     {
       title: "Info text",

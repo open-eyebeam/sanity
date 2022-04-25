@@ -12,6 +12,7 @@ export default {
       title: "Title",
       name: "title",
       type: "string",
+      validation: Rule => Rule.required(),
     },
     {
       title: "Slug",
@@ -40,6 +41,7 @@ export default {
       title: "Dimensions",
       name: "dimensions",
       type: "object",
+      validation: Rule => Rule.required(),
       fields: [
         {
           title: "Width",
@@ -60,16 +62,6 @@ export default {
       ]
     },
     {
-      title: "Background image",
-      name: "backgroundImage",
-      type: "image",
-    },
-    {
-      title: "Introduction",
-      name: "introduction",
-      type: "simpleEditor",
-    },
-    {
       title: 'Introduction texts',
       name: 'introductionTexts',
       type: 'array',
@@ -84,11 +76,20 @@ export default {
       }]
     },
     {
+      title: "Background image",
+      name: "backgroundImage",
+      type: "image",
+    },
+    {
+      title: "Background video",
+      name: "backgroundVideo",
+      type: "file",
+    },
+    {
       title: "Background sound",
       name: "backgroundSound",
       description: "Format: mp3",
       type: "file",
     },
-
   ],
 }

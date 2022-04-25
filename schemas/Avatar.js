@@ -11,12 +11,14 @@ export default {
       title: "Title",
       name: "title",
       type: "string",
+      validation: Rule => Rule.required(),
     },
     {
       title: "Image",
       description: "32x32 pixels",
       name: "image",
-      type: "image"
+      type: "image",
+      validation: Rule => Rule.required(),
     },
   ],
 }
