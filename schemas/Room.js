@@ -82,6 +82,7 @@ export default {
     },
     {
       title: "Background video",
+      description: "Uploading a file here will override the background image. Formats: mp4, webm",
       name: "backgroundVideo",
       type: "file",
     },

@@ -29,7 +29,18 @@ export default {
                         validation: Rule => Rule.required(),
                     },
                     {
-                        title: "Video url",
+                        title: "Stream type",
+                        name: "streamType",
+                        type: "string",
+                        options: {
+                            list: [
+                                { title: "Video", value: "video" },
+                                { title: "Audio", value: "audio" }
+                            ],
+                        },
+                    },
+                    {
+                        title: "URL",
                         description: "URL for a stream hosted by peertube, youtube or vimeo.",
                         name: "videoUrl",
                         type: "url",
