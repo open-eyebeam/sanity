@@ -22,6 +22,11 @@ export default {
                         validation: Rule => Rule.required(),
                     },
                     {
+                        title: "Active",
+                        name: "active",
+                        type: "boolean",
+                    },
+                    {
                         title: "Room or Zone",
                         name: "parentArea",
                         type: "reference",

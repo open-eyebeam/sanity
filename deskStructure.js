@@ -11,13 +11,25 @@ import {
   MdStream,
   MdCalendarToday,
   MdEditCalendar,
-  MdEvent
+  MdEvent,
+  MdHelpCenter
 } from "react-icons/md"
 
 export default () =>
   S.list()
     .title("Open Eyebeam")
     .items([
+      S.listItem()
+        .title("Onboarding Tutorial")
+        .icon(MdHelpCenter)
+        .child(
+          S.editor()
+            .id("onboarding-tutorial")
+            .title("Onboarding Tutorial")
+            .schemaType("onboardingTutorial")
+            .documentId("onboarding-tutorial")
+        ),
+      S.divider(),
       S.listItem()
         .title("Rooms")
         .icon(MdYard)

@@ -25,6 +25,7 @@ import user from "./User"
 import event from "./Event"
 import streams from "./Streams"
 import bulletinBoardSettings from "./BulletinBoardSettings"
+import onboardingTutorial from "./OnboardingTutorial"
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -52,6 +53,7 @@ export default createSchema({
     portal,
     streams,
     event,
-    bulletinBoardSettings
+    bulletinBoardSettings,
+    onboardingTutorial
   ]),
 })
