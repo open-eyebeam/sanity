@@ -99,6 +99,7 @@ export default {
         list: [
           { title: "Text", value: "text" },
           { title: "Video", value: "video" },
+          { title: "3D/360 Video", value: "video3D" },
           { title: "Import from main website", value: "importedPost" },
           { title: "Bulletin Board", value: "bulletinBoard" },
         ],
