@@ -39,6 +39,7 @@ export default {
                     type: 'block',
                     styles: [
                         { title: 'Normal', value: 'normal' },
+                        {title: 'HTML', value: 'html'},
                         {
                             title: 'Medium', value: 'medium', blockEditor: {
                                 render: mediumRender
