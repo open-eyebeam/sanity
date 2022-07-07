@@ -20,5 +20,12 @@ export default {
       type: "image",
       validation: Rule => Rule.required(),
     },
+    {
+      title: "Image description",
+      description: "Alt text for unsighted users.",
+      name: "alt",
+      type: "string",
+      validation: Rule => Rule.required(),
+    }
   ],
 }

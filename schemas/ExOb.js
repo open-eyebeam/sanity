@@ -86,6 +86,12 @@ export default {
       validation: Rule => Rule.required(),
     },
     {
+      title: "Image description",
+      name: "alt",
+      type: "string",
+      validation: Rule => Rule.required(),
+    },
+    {
       title: "Info text",
       description: "Displayed in the bottom left corner of the screen when viewing the object",
       name: "infoText",

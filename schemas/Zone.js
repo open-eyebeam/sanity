@@ -91,6 +91,12 @@ export default {
             type: "file",
         },
         {
+            title: "Background image/video description",
+          name: "alt",
+          type: "string",
+          validation: Rule => Rule.required(),
+        },
+        {
             title: "Background sound",
             name: "backgroundSound",
             description: "Format: mp3",
