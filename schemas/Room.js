@@ -62,6 +62,12 @@ export default {
       ]
     },
     {
+      title: "Show Object Titles",
+      name: "showTitles",
+      description: "Show object and portal titles (toggle off to hide them)",
+      type: "boolean",
+    },
+    {
       title: 'Introduction texts',
       name: 'introductionTexts',
       type: 'array',
