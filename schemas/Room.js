@@ -104,5 +104,12 @@ export default {
       description: "Format: mp3",
       type: "file",
     },
+   {
+      title: "Autoplay background sound",
+      name: "autoplay",
+      description: "Automatically play the background sound when a user enters.",
+      type: "boolean",
+    },
+
   ],
 }
