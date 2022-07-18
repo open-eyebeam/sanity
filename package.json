@@ -16,7 +16,7 @@
   "dependencies": {
     "@reach/auto-id": "^0.16.0",
     "@sanity/base": "^2.29.5",
-    "@sanity/color": "^2.1.10",
+    "@sanity/color": "^2.1.11",
     "@sanity/color-input": "^2.29.5",
     "@sanity/components": "^2.14.0",
     "@sanity/core": "^2.29.5",

@@ -135,5 +135,12 @@ export default {
       },
       hidden: ({ document }) => document?.static || document?.contentType !== "importedPost",
     },
+    {
+      title: "Direct iframe embed",
+      description: "(Experimental, do not use if you don't know what you're doing). If the object is an iframe, embed it directly in the room.",
+      name: "iframeEmbed",
+      type: "boolean",
+    },
+
   ]
 }
