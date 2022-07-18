@@ -93,6 +93,12 @@ export default {
       type: "file",
     },
     {
+      title: "Background link",
+      description: "Adding a link here will override the background image and display the chosen link as an iframe",
+      name: "backgroundLink",
+      type: "url",
+    },
+    {
         title: "Background image/video description",
         name: "alt",
         type: "string",
