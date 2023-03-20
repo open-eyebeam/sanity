@@ -108,8 +108,17 @@ export default {
           { title: "3D/360 Video", value: "video3D" },
           { title: "Import from main website", value: "importedPost" },
           { title: "Bulletin Board", value: "bulletinBoard" },
+          {
+            title: "External Link", value: "externalLink"
+          }
         ],
       },
+    },
+    {
+      title: "URL",
+      name: "url",
+      type: "url",
+      hidden: ({ document }) => document?.static || document.contentType !== "externalLink"
     },
     {
       title: "Content",

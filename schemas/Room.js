@@ -24,12 +24,33 @@ export default {
       },
       validation: (Rule) => Rule.required(),
     },
-    {
+        {
       title: "Main area",
       name: "mainArea",
       description: "If toggled, the user will start in this room",
       type: "boolean",
     },
+    { title: 'Chat settings',
+      name: 'chatSettings',
+      type: 'object',
+      fields: [
+        {
+          title: "Use Discord Chat",
+          name: "useDiscord",
+          description: "If toggled, this room will use Eyebeam's Discord chat instead of the default chat.",
+          type: "boolean",
+          initialValue: false
+
+        },
+        {
+          title: 'Discord Channel ID',
+          name: "discordChannelId",
+          description: "The ID of the channel that should be used for this room's Discord chat",
+          type: "string",
+          hidden: ({parent})  => !parent?.useDiscord
+      }
+    ]
+  },
     {
       title: "Restricted",
       description: "Only show this room to users who are logged in",
