@@ -35,6 +35,13 @@ export default {
       type: 'object',
       fields: [
         {
+          title: "Disable chat",
+          name: "disableChat",
+          description: "This will turn chat off in this room.",
+          type: "boolean",
+          initialValue: false
+        },
+        {
           title: "Use Discord Chat",
           name: "useDiscord",
           description: "If toggled, this room will use Eyebeam's Discord chat instead of the default chat.",
@@ -118,6 +125,12 @@ export default {
       description: "Adding a link here will override the background image and display the chosen link as an iframe",
       name: "backgroundLink",
       type: "url",
+    },
+    {
+      title: "Disable iframe interaction",
+      description: "This will prevent the background iframe from taking keyboard or mouse input",
+      name: "iframeInteraction",
+      type: "boolean"
     },
     {
         title: "Background image/video description",
