@@ -31,17 +31,17 @@ export default {
         },
         {
             title: "X-Position",
-            description: "In grid units",
+            description: "In grid units - must be a round number.",
             name: "x",
             type: "number",
-            validation: Rule => Rule.required(),
+            validation: Rule => Rule.required().integer(),
         },
         {
             title: "Y-Position",
-            description: "In grid units",
+            description: "In grid units - must be a round number.",
             name: "y",
             type: "number",
-            validation: Rule => Rule.required(),
+            validation: Rule => Rule.required().integer(),
         },
 
         {
