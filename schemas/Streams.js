@@ -35,6 +35,12 @@ export default {
                         validation: Rule => Rule.required(),
                     },
                     {
+                      title: "Show in all rooms",
+                      name: "showEverywhere",
+                      type: "boolean",
+                      initialValue: false
+                    },
+                    {
                         title: "Stream type",
                         name: "streamType",
                         type: "string",
