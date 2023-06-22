@@ -197,6 +197,18 @@ export default () =>
         ),
       S.divider(),
       S.listItem()
+        .title("Video Library")
+        .icon(MdStream)
+        .child(
+          S.editor()
+            .id("videoLibrary")
+            .title("Video Library")
+            .schemaType("videoLibrary")
+            .documentId("videoLibrary")
+        ),
+
+      S.divider(),
+      S.listItem()
         .title("Users")
         .icon(MdAccountCircle)
         .child(

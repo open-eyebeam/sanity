@@ -24,6 +24,7 @@ import portal from "./Portal"
 import user from "./User"
 import event from "./Event"
 import streams from "./Streams"
+import videoLibrary from "./VideoLibrary"
 import bulletinBoardSettings from "./BulletinBoardSettings"
 import onboardingTutorial from "./OnboardingTutorial"
 
@@ -53,6 +54,7 @@ export default createSchema({
     portal,
     streams,
     event,
+    videoLibrary,
     bulletinBoardSettings,
     onboardingTutorial
   ]),
