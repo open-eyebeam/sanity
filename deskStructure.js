@@ -200,11 +200,11 @@ export default () =>
         .title("Video Library")
         .icon(MdStream)
         .child(
-          S.editor()
-            .id("videoLibrary")
-            .title("Video Library")
-            .schemaType("videoLibrary")
-            .documentId("videoLibrary")
+          S.documentList()
+          .title('Events by Date')
+                    // .defaultLayout('detail')
+          .filter('_type == $type')
+          .params({ type: 'videoLibrary' })
         ),
 
       S.divider(),

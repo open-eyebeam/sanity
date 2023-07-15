@@ -2,11 +2,24 @@
 import { MdStream } from "react-icons/md";
 
 export default {
-  title: "Video Library",
+
+  title: "Event Library",
   name: "videoLibrary",
   type: "document",
   icon: MdStream,
   fields: [
+    {
+            title: "Title",
+            name: "title",
+            type: "string",
+        },
+        {
+            title: 'Start Date',
+            name: 'startDate',
+            type: 'datetime',
+            hidden: ({ document }) => document?.importEvent
+        },
+
     {
       title: "Active videos",
       name: "activeVideos",
