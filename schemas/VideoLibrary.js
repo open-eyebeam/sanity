@@ -17,6 +17,7 @@ export default {
       name: "startDate",
       type: "datetime",
       hidden: ({ document }) => document?.importEvent,
+      validation: (Rule) => Rule.required(),
     },
 
     {
@@ -64,11 +65,13 @@ export default {
                 "URL for a video hosted by peertube, youtube or vimeo.",
               name: "videoUrl",
               type: "url",
+              validation: (Rule) => Rule.required(),
             },
             {
               title: "Date",
               name: "startDate",
               type: "datetime",
+              validation: (Rule) => Rule.required(),
             },
             {
               title: "Image",
