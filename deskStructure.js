@@ -77,35 +77,16 @@ export default () =>
       S.listItem()
         .title('Objects')
         .icon(MdBook)
-        .child(
-          S.list()
-            .title("Objects")
-            .items([
-              S.listItem()
-                .title('All objects')
-                .icon(MdBook)
-                .child(
-                  S.documentList()
-                    .title('All objects')
-                    // .defaultLayout('detail')
-                    .filter('_type == $type')
-                    .params({ type: 'exob' })
-                ),
-              S.listItem()
-                .title('Objects by Room')
-                .icon(MdBook)
                 .child(
                   S.documentTypeList('room')
                     .title('Objects by Room')
                     .child(roomId =>
                       S.documentList()
-                        .title('Objects by Room')
+                        .title('Objects')
                         // .defaultLayout('detail')
                         .filter('_type == "exob" && $roomId== parentArea._ref')
                         .params({ roomId })
                     )
-                ),
-            ])
         ),
       S.listItem()
         .title('Zones')
