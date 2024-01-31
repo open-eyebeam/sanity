@@ -15,7 +15,7 @@ export default {
       type: "string",
       validation: (Rule) => Rule.required(),
     },
-    {
+        {
       title: "Slug",
       name: "slug",
       type: "slug",
@@ -24,6 +24,29 @@ export default {
         maxLength: 200,
       },
       validation: (Rule) => Rule.required(),
+    },
+    {
+      title: "Artist Name",
+      name: "artistName",
+      type: "string"
+    },
+    {  
+      title: "Artist Image",
+      name: "artistImage",
+      type: "string"
+    },
+    {
+      title: "Feed Only",
+      name: "feedOnly",
+      description: "If toggled, this room will only show the feed",
+      type: "boolean",
+    },
+    {
+          title: "Feed",
+          description: "A home for updates, messages, and ephemera during your fellowship",
+          name: "feed",
+          type: "array",
+          of: [{'type': 'contentEditor'}]
     },
     {
       title: "Main area",
@@ -61,7 +84,7 @@ export default {
         },
       ],
     },
-    {
+        {
       title: "Restricted",
       description: "Only show this room to users who are logged in",
       name: "restricted",
