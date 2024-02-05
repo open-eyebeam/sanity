@@ -8,6 +8,7 @@ import schemaTypes from "all:part:@sanity/base/schema-type"
 import contentEditor from './components/ContentEditor'
 import simpleEditor from './components/SimpleEditor'
 import embedBlock from './components/Embed'
+import feedItem from './components/FeedItem'
 // import videoBlock from './components/Video'
 import audioBlock from './components/Audio'
 import dividerBlock from './components/Divider'
@@ -39,6 +40,7 @@ export default createSchema({
     contentEditor,
     simpleEditor,
     embedBlock,
+    feedItem,
     audioBlock,
     dividerBlock,
     columnsBlock,

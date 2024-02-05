@@ -115,15 +115,7 @@ export default {
                             },
                             validation: Rule => Rule.required(),
                         },
-                        {
-                            title: 'Caption',
-                            name: 'caption',
-                            type: 'simpleEditor',
-                            options: {
-                                isHighlighted: true
-                            }
-                        },
-                        {
+                                                {
                             title: 'Full width',
                             name: 'fullWidth',
                             type: 'boolean',

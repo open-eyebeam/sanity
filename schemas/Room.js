@@ -33,12 +33,25 @@ export default {
     {  
       title: "Artist Image",
       name: "artistImage",
-      type: "string"
+      type: "image"
     },
     {
-      title: "Feed Only",
-      name: "feedOnly",
-      description: "If toggled, this room will only show the feed",
+      title: "About the Artist",
+      name: "artistBio",
+      type: "simpleEditor"
+    },
+    {
+      title: "Feed Enabled",
+      name: "feedEnabled",
+      description: "If toggled, enables showing the feed in the room.",
+      type: "boolean",
+      initialValue: false
+    },
+
+    {
+      title: "Show Feed on Launch",
+      name: "showFeedOnLaunch",
+      description: "If toggled, this room will show the feed by default.",
       type: "boolean",
     },
     {
@@ -46,7 +59,7 @@ export default {
           description: "A home for updates, messages, and ephemera during your fellowship",
           name: "feed",
           type: "array",
-          of: [{'type': 'contentEditor'}]
+          of: [{'type': 'feedItem'}]
     },
     {
       title: "Main area",
