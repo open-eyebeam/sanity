@@ -8,12 +8,25 @@ export default {
   name: "room",
   type: "document",
   icon: MdYard,
+  groups: [
+    {
+      name: 'advanced',
+      title: 'Advanced Settings'
+    },
+    {
+      name: 'main',
+      title: 'Main Settings',
+      default: true
+    }
+
+  ],
   fields: [
     {
       title: "Title",
       name: "title",
       type: "string",
       validation: (Rule) => Rule.required(),
+      group: 'main'
     },
         {
       title: "Slug",
@@ -24,28 +37,151 @@ export default {
         maxLength: 200,
       },
       validation: (Rule) => Rule.required(),
+      group: 'advanced'
+    },
+    {
+          title: "Feed",
+          description: "A home for updates, messages, and ephemera during your fellowship",
+          name: "feed",
+          type: "array",
+          of: [{'type': 'feedItem'}],
+          group: 'main'
+    },
+    {
+      title: "Background image",
+      name: "backgroundImage",
+      type: "image",
+      hotspot: true,
+      validation: (Rule) => Rule.required(),
+      fields: [
+        {
+          title: "alt",
+          name: "alt",
+          type: "string",
+          inputComponent: AltInput,
+          validation: (Rule) => Rule.required(),
+          options: {
+            isHighlighted: true,
+          },
+        },
+      ],
+      group: 'main'
     },
     {
       title: "Artist Name",
       name: "artistName",
-      type: "string"
+      type: "string",
+      group: 'main'
     },
     {  
       title: "Artist Image",
       name: "artistImage",
-      type: "image"
+      type: "image",
+      group: 'main'
     },
     {
       title: "About the Artist",
       name: "artistBio",
-      type: "simpleEditor"
+      type: "simpleEditor",
+      group: 'main'
+    },
+   {
+      title: "Dimensions",
+      name: "dimensions",
+      type: "object",
+      validation: (Rule) => Rule.required(),
+      fields: [
+        {
+          title: "Width",
+          description: "In grid units",
+          name: "width",
+          type: "number",
+          inputComponent: DimensionInput,
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          title: "Height",
+          description: "In grid units",
+          name: "height",
+          type: "number",
+          inputComponent: DimensionInput,
+          validation: (Rule) => Rule.required(),
+        },
+      ],
+      group: 'main'
+    },
+     
+    {
+      title: "Introduction texts",
+      name: "introductionTexts",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          fields: [
+            {
+              title: "Text",
+              name: "text",
+              type: "simpleEditor",
+            },
+          ],
+        },
+      ],
+      group: 'main'
+    },
+    {
+      title: "Show Object Titles",
+      name: "showTitles",
+      description: "Show object and portal titles (toggle off to hide them)",
+      type: "boolean",
+      group: 'advanced'
+    },
+    {
+      title: "Background video",
+      description:
+        "Uploading a file here will override the background image. Formats: mp4, webm",
+      name: "backgroundVideo",
+      type: "file",
+      group: 'advanced'
+    },
+    {
+      title: "Background link",
+      description:
+        "Adding a link here will override the background image and display the chosen link as an iframe",
+      name: "backgroundLink",
+      type: "url",
+      group: 'advanced'
+    },
+    {
+      title: "Disable iframe interaction",
+      description:
+        "This will prevent the background iframe from taking keyboard or mouse input",
+      name: "iframeInteraction",
+      type: "boolean",
+      group: 'advanced'
+    },
+    {
+      title: "Background sound",
+      name: "backgroundSound",
+      description: "Format: mp3",
+      type: "file",
+      group: 'main'
+    },
+    {
+      title: "Autoplay background sound",
+      name: "autoplay",
+      description:
+        "Automatically play the background sound when a user enters.",
+      type: "boolean",
+      group: 'advanced'
     },
     {
       title: "Feed Enabled",
       name: "feedEnabled",
       description: "If toggled, enables showing the feed in the room.",
       type: "boolean",
-      initialValue: false
+      initialValue: false,
+      group: 'advanced'
     },
 
     {
@@ -53,19 +189,14 @@ export default {
       name: "showFeedOnLaunch",
       description: "If toggled, this room will show the feed by default.",
       type: "boolean",
-    },
-    {
-          title: "Feed",
-          description: "A home for updates, messages, and ephemera during your fellowship",
-          name: "feed",
-          type: "array",
-          of: [{'type': 'feedItem'}]
+      group: 'advanced'
     },
     {
       title: "Main area",
       name: "mainArea",
       description: "If toggled, the user will start in this room",
       type: "boolean",
+      group: 'advanced'
     },
     {
       title: "Chat settings",
@@ -96,6 +227,7 @@ export default {
           hidden: ({ parent }) => !parent?.useDiscord,
         },
       ],
+      group: 'advanced'
     },
         {
       title: "Restricted",
@@ -103,106 +235,8 @@ export default {
       name: "restricted",
       type: "boolean",
       hidden: ({ document }) => document?.mainArea,
+      group: 'advanced'
     },
-    {
-      title: "Dimensions",
-      name: "dimensions",
-      type: "object",
-      validation: (Rule) => Rule.required(),
-      fields: [
-        {
-          title: "Width",
-          description: "In grid units",
-          name: "width",
-          type: "number",
-          inputComponent: DimensionInput,
-          validation: (Rule) => Rule.required(),
-        },
-        {
-          title: "Height",
-          description: "In grid units",
-          name: "height",
-          type: "number",
-          inputComponent: DimensionInput,
-          validation: (Rule) => Rule.required(),
-        },
-      ],
-    },
-    {
-      title: "Show Object Titles",
-      name: "showTitles",
-      description: "Show object and portal titles (toggle off to hide them)",
-      type: "boolean",
-    },
-    {
-      title: "Introduction texts",
-      name: "introductionTexts",
-      type: "array",
-      of: [
-        {
-          type: "object",
-          fields: [
-            {
-              title: "Text",
-              name: "text",
-              type: "simpleEditor",
-            },
-          ],
-        },
-      ],
-    },
-    {
-      title: "Background image",
-      name: "backgroundImage",
-      type: "image",
-      hotspot: true,
-      validation: (Rule) => Rule.required(),
-      fields: [
-        {
-          title: "alt",
-          name: "alt",
-          type: "string",
-          inputComponent: AltInput,
-          validation: (Rule) => Rule.required(),
-          options: {
-            isHighlighted: true,
-          },
-        },
-      ],
-    },
-    {
-      title: "Background video",
-      description:
-        "Uploading a file here will override the background image. Formats: mp4, webm",
-      name: "backgroundVideo",
-      type: "file",
-    },
-    {
-      title: "Background link",
-      description:
-        "Adding a link here will override the background image and display the chosen link as an iframe",
-      name: "backgroundLink",
-      type: "url",
-    },
-    {
-      title: "Disable iframe interaction",
-      description:
-        "This will prevent the background iframe from taking keyboard or mouse input",
-      name: "iframeInteraction",
-      type: "boolean",
-    },
-    {
-      title: "Background sound",
-      name: "backgroundSound",
-      description: "Format: mp3",
-      type: "file",
-    },
-    {
-      title: "Autoplay background sound",
-      name: "autoplay",
-      description:
-        "Automatically play the background sound when a user enters.",
-      type: "boolean",
-    },
+
   ],
 };
